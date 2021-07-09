@@ -1,7 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\LandingController;
+use App\Http\Controllers\PegawaiController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,9 +15,8 @@ use App\Http\Controllers\LandingController;
 */
 
 // Route::get('/', function () {
-//     return view('welcome');
+//     return view('content.index');
 // });
+route::resource('/', PegawaiController::class);
 
-
-
-Route::resource('/', LandingController::class);
+route::resource('/pegawai', PegawaiController::class);

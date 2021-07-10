@@ -3,7 +3,7 @@
 @section('content')
 @foreach($ar_pegawai as $a)
 
-<div class="container card p-3">
+<div class="container card p-3 bg-primary">
     <div class="team-single">
         <div class="row">
             <div class="col-lg-4 col-md-5 xs-margin-30px-bottom">
@@ -31,7 +31,7 @@
                                 <div class="row">
                                     <div class="col-md-5 col-5">
                                     <i class="far fa-id-badge"></i>
-                                        </i><strong class="margin-10px-left text-orange"> NIP :</strong>
+                                        </i><strong class="margin-10px-left text-orang none"> NIP :</strong>
                                     </div>
                                     <div class="col-md-7 col-7">
                                         <p>{{ $a->nip }}</p>
@@ -56,7 +56,7 @@
                                         <strong class="margin-10px-left xs-margin-four-left text-pink"> Alamat : </strong>
                                     </div>
                                     <div class="col-md-7 col-7">
-                                        <p><a href="" class="email">{{ $a->alamat }}</a></p>
+                                        <p>{{ $a->alamat }}</p>
                                     </div>
                                 </div>
                             </li>
@@ -67,7 +67,7 @@
                                         <strong class="margin-10px-left xs-margin-four-left text-pink"> Tempat Lahir : </strong>
                                     </div>
                                     <div class="col-md-7 col-7">
-                                        <p><a href="" class="email">{{ $a->tempat_lahir }}</a></p>
+                                        <p>{{ $a->tempat_lahir }}</p>
                                     </div>
                                 </div>
                             </li>
@@ -78,7 +78,7 @@
                                         <strong class="margin-10px-left xs-margin-four-left text-pink"> Tanggal Lahir :</strong>
                                     </div>
                                     <div class="col-md-7 col-7">
-                                        <p><a href="" class="email">{{ $a->tgl_lahir }}</a></p>
+                                        <p>{{ $a->tgl_lahir }}</p>
                                     </div>
                                 </div>
                             </li>
@@ -89,7 +89,7 @@
                                         <strong class="margin-10px-left xs-margin-four-left text-pink"> No telp : </strong>
                                     </div>
                                     <div class="col-md-7 col-7">
-                                        <p><a href="" class="email">{{ $a->no_hp }}</a></p>
+                                        <p>{{ $a->no_hp }}</p>
                                     </div>
                                 </div>
                             </li>
@@ -100,7 +100,7 @@
                                         <strong class="margin-10px-left xs-margin-four-left text-pink"> Kelamin</strong>
                                     </div>
                                     <div class="col-md-7 col-7">
-                                        <p><a href="" class="email">{{ $a->kelamin_id }}</a></p>
+                                        <p>{{ $a->kelamin_id }}</p>
                                     </div>
                                 </div>
                             </li>
@@ -122,7 +122,7 @@
                                         <strong class="margin-10px-left xs-margin-four-left text-pink"> Jabatan</strong>
                                     </div>
                                     <div class="col-md-7 col-7">
-                                        <p><a href="" class="email">{{ $a->jabatan_id }}</a></p>
+                                        <p>{{ $a->jabatan_id }}</p>
                                     </div>
                                 </div>
                             </li>
@@ -133,7 +133,7 @@
                                         <strong class="margin-10px-left xs-margin-four-left text-pink"> Golongan</strong>
                                     </div>
                                     <div class="col-md-7 col-7">
-                                        <p><a href="" class="email">{{ $a->golongan_id }}</a></p>
+                                        <p>{{ $a->golongan_id }}</p>
                                     </div>
                                 </div>
                             </li>

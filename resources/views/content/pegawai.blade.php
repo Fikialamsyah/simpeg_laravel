@@ -5,12 +5,12 @@ $no = 1;
 @endphp
 @section('content')
 <h3>Daftar Pegawai</h3>
-
-<a class="btn btn-outline-info" href="{{ route('pegawai.create') }}"> Tambah </a>
+<br>
+<a class="btn btn-info" href="{{ route('pegawai.create') }}"> Tambah </a>
+<br><br>
 <div class="table-responsive">
-    <table class="table table-striped">
-        <thead>
-            <tr>
+    <table class="table table-striped table-hover">
+        <thead class="bg-primary">
                 @foreach($ar_judul as $jdl)
                 <th class="text-center">{{ $jdl }}</th>
                 @endforeach
@@ -47,9 +47,9 @@ $no = 1;
                 <form method="post" action="{{ route('pegawai.destroy',$a->id) }}">
                     @csrf
                     @method('delete')
-                    <a class="btn btn-outline-info" href="{{ route('pegawai.show',$a->id) }}"> Detail </a>
-                    <a class="btn btn-outline-warning" href="{{ route('pegawai.edit',$a->id) }}"> Edit </a>
-                    <button class="btn btn-outline-danger" onclick="return confirm('Anda Yakin Ingin Dihapus?')">Delete</button>
+                    <a class="btn btn-info" href="{{ route('pegawai.show',$a->id) }}"> Detail </a>
+                    <a class="btn btn-warning m-2" href="{{ route('pegawai.edit',$a->id) }}"> Edit </a>
+                    <button class="btn btn-danger" onclick="return confirm('Anda Yakin Ingin Dihapus?')">Delete</button>
                 </form>
                 </td>
             </tr>

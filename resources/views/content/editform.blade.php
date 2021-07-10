@@ -1,6 +1,6 @@
 @extends('layouts.index')
 @section('content')
-<div class="container">
+<div class="container bg-primary p-3">
     @foreach($data as $a)
     <h3>Edit Pegawai {{ $a->nama }}</h3>
     <form action="{{ route('pegawai.update',$a->id) }}" method="Post" enctype="multipart/form-data">

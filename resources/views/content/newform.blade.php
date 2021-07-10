@@ -1,7 +1,7 @@
 @extends('layouts.index')
 @section('content')
 
-<div class="container">
+<div class="container bg-primary p-3">
     <h3>Form Pegawai</h3>
     <form action="{{ route('pegawai.store') }}" method="Post" enctype="multipart/form-data">
         @csrf
@@ -150,8 +150,8 @@
             <input type="file" name="foto" class="form-control">
         </div>
 
-        <button class="btn btn-outline-success mt-5" name="proses" type="submit">Simpan</button>
-        <a href="{{ url('/pegawai') }}" class="btn btn-outline-danger mt-5" name="unproses" type="reset">Batal</a>
+        <button class="btn btn-success mt-5" name="proses" type="submit">Simpan</button>
+        <a href="{{ url('/pegawai') }}" class="btn btn-danger mt-5" name="unproses" type="reset">Batal</a>
     </form>
 </div>
 @endsection

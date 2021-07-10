@@ -38,16 +38,16 @@ class PegawaiController extends Controller
      */
     public function store(Request $request)
     {
-         //upload file
-         if(!empty($request->foto)){
-            $request->validate(
-                ['foto'=>'image|mimes:png,jpg|max:2048']
-            );
-            $filename = $request->nama.'.'.$request->foto->extension();
-            $request->foto->move(public_path('images'),$filename);
-        }else{
-            $filename = '';
-        }
+            //upload file
+            if(!empty($request->foto)){
+                $request->validate(
+                    ['foto'=>'image|mimes:png,jpg|max:2048']
+                );
+                $filename = $request->nama.'.'.$request->foto->extension();
+                $request->foto->move(public_path('images'),$filename);
+            }else{
+                $filename = '';
+            }
 
         //menyimpan data
         DB::table('pegawai')->insert(
@@ -89,9 +89,9 @@ class PegawaiController extends Controller
      */
     public function edit($id)
     {
-         //mengarahkan ke form edit
-         $data = DB::table('pegawai')->where('id',$id)->get();
-         return view('content.editform',compact('data'));
+            //mengarahkan ke form edit
+            $data = DB::table('pegawai')->where('id',$id)->get();
+            return view('content.editform',compact('data'));
     }
 
     /**
@@ -103,33 +103,33 @@ class PegawaiController extends Controller
      */
     public function update(Request $request, $id)
     {
-         //upload file
-         if(!empty($request->foto)){
-            $request->validate(
-                ['foto'=>'image|mimes:png,jpg|max:2048']
+            //upload file
+            if(!empty($request->foto)){
+                $request->validate(
+                    ['foto'=>'image|mimes:png,jpg|max:2048']
+                );
+                $filename = $request->nama.'.'.$request->foto->extension();
+                $request->foto->move(public_path('images'),$filename);
+            }else{
+                $filename = '';
+            }
+            //update data
+            DB::table('pegawai')->where('id',$id)->update(
+                [
+                    'nip'=>$request->nip,
+                    'nama'=>$request->nama,
+                    'alamat'=>$request->alamat,
+                    'no_hp'=>$request->no_hp,
+                    'tempat_lahir'=>$request->tempat_lahir,
+                    'tgl_lahir'=>$request->tgl_lahir,
+                    'kelamin_id'=>$request->kelamin_id,
+                    'agama_id'=>$request->agama_id,
+                    'jabatan_id'=>$request->jabatan_id,
+                    'golongan_id'=>$request->golongan_id,
+                    'foto'=>$filename
+                ]
             );
-            $filename = $request->nama.'.'.$request->foto->extension();
-            $request->foto->move(public_path('images'),$filename);
-        }else{
-            $filename = '';
-        }
-        //update data
-        DB::table('pegawai')->where('id',$id)->update(
-            [
-                'nip'=>$request->nip,
-                'nama'=>$request->nama,
-                'alamat'=>$request->alamat,
-                'no_hp'=>$request->no_hp,
-                'tempat_lahir'=>$request->tempat_lahir,
-                'tgl_lahir'=>$request->tgl_lahir,
-                'kelamin_id'=>$request->kelamin_id,
-                'agama_id'=>$request->agama_id,
-                'jabatan_id'=>$request->jabatan_id,
-                'golongan_id'=>$request->golongan_id,
-                'foto'=>$filename
-            ]
-        );
-        return redirect('/pegawai'.'/'.$id);  
+            return redirect('/pegawai'.'/'.$id);  
     }
 
     /**
@@ -140,8 +140,9 @@ class PegawaiController extends Controller
      */
     public function destroy($id)
     {
-         //hapus data
-         DB::table('pegawai')->where('id',$id)->delete();
-         return redirect('/pegawai');
+            //hapus data
+            DB::table('pegawai')->where('id',$id)->delete();
+            return redirect('/pegawai');
     }
 }
+

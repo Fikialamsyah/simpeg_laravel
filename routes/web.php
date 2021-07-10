@@ -14,9 +14,19 @@ use App\Http\Controllers\PegawaiController;
 |
 */
 
+Route::get('/', function () {
+    return view('layouts.beranda');
+});
+
+Route::get('/about', function () {
+    return view('layouts.about');
+});
+
+route::resource('/pegawai', PegawaiController::class);
+
+
+// route::resource('/pegawai', PegawaiController::class);
+
 // Route::get('/', function () {
 //     return view('content.index');
 // });
-route::resource('/', PegawaiController::class);
-
-route::resource('/pegawai', PegawaiController::class);

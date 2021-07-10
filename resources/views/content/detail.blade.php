@@ -1,4 +1,4 @@
-@extends('layout.layout')
+@extends('layouts.index')
 
 @section('content')
 @foreach($ar_pegawai as $a)
